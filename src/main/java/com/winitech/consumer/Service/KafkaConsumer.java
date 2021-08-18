@@ -1,4 +1,4 @@
-package com.winitech.kafkaexam.Service;
+package com.winitech.consumer.Service;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 

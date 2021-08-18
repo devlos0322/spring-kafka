@@ -1,6 +1,6 @@
-package com.winitech.kafkaexam.Controller;
+package com.winitech.producer.Controller;
 
-import com.winitech.kafkaexam.Service.KafkaProducer;
+import com.winitech.producer.Service.KafkaProducer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +19,9 @@ public class KafkaController {
 
     @PostMapping
     public String sendMessage(@RequestParam("message") String message) {
-        this.producer.sendMessage(message);
+        for (int i = 0; i < 10000; i++) {
+            this.producer.sendMessage(message + i);
+        }
 
         return "success";
     }
